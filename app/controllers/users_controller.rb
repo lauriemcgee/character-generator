@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  def index
+    render "index.html.erb"
+  end
   def new
     render "new.html.erb"
   end
@@ -8,7 +11,7 @@ class UsersController < ApplicationController
         last_name: params[:last_name],
         email: params[:email],
         password: params[:password],
-        password_confirmation: params[:password_cofirmation]
+        password_confirmation: params[:password_confirmation]
       )
     if user.save
       session[:user_id] = user.id 
